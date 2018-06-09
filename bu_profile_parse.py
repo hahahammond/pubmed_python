@@ -3,8 +3,8 @@ from lxml import html
 import requests
 import re
 
-# Extract URLs from an individual's Boston University Profile page
-page = requests.get('https://profiles.bu.edu/Ali.Guermazi')
+# Extract URLs from an individual's Boston University Profile page (https://profiles.bu.edu/search/)
+page = requests.get('[INSERT URL HERE]')
 tree = html.fromstring(page.content)
 urls = tree.xpath('//span/a/@href')
 
