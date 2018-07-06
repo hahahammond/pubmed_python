@@ -1,4 +1,4 @@
-# Entry Term And-er
+# Entry Term AND-er
 
 # Import libraries
 import lxml.html
