@@ -52,7 +52,7 @@ print('\n')
 print('"' + clean_mesh + '"[Mesh]')
 f.write('"' + clean_mesh + '"[Mesh]')
 
-# Write all remaining Entry Terms to text file, separated by OR
+# Write Entry Terms to text file, separated by OR
 for entry_term in entry_terms[1:]:
     clean_entry_term = entry_term.replace("'", "")
     print(' OR ' + clean_entry_term)
