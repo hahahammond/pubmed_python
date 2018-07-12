@@ -11,6 +11,7 @@ f= open('entry_terms.txt','w+')
 # Enter URL from MeSH page 
 url = '[ENTER URL FOR MESH TERM HERE]'
 
+
 # Remove ezproxy from URL if necessary
 ezproxy = 'https://www-ncbi-nlm-nih-gov.ezproxy.bu.edu/'
 no_ezproxy = 'https://www.ncbi.nlm.nih.gov/'
@@ -22,7 +23,7 @@ if ezproxy in url:
 r = requests.get(url)
 
 # Find and print MeSH Heading
-root = html.fromstring(r.content)
+root = lxml.html.fromstring(r.content)
 mesh = root.xpath('//h1/text()')
 clean_mesh = mesh[0].replace("'", "")
 print('MeSH Heading:')
