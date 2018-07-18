@@ -9,9 +9,7 @@ import re
 f= open('entry_terms.txt','w+')
 
 # Enter URL from MeSH page 
-#url = '[ENTER URL FOR MESH TERM HERE]'
-url = 'https://www-ncbi-nlm-nih-gov.ezproxy.bu.edu/mesh/68009369'
-
+url = '[ENTER URL FOR MESH TERM HERE]'
 
 # Remove ezproxy from URL if necessary
 ezproxy = 'https://www-ncbi-nlm-nih-gov.ezproxy.bu.edu/'
