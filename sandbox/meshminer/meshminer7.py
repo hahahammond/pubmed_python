@@ -3,7 +3,6 @@ import lxml.html
 import requests
 import re
 import pandas as pd
-from bs4 import BeautifulSoup
 
 
 # Create empty df for MeSH terms data
@@ -47,10 +46,13 @@ mesh_tally.to_csv('mesh_tally.csv', index=False)
         
 print(mesh_tally)
 
-#table = BeautifulSoup(mesh_tally.to_html(index=False),  'html.parser')
-table = BeautifulSoup(mesh_tally.to_html(index=False),  'html5lib')
-table.find('table')['id'] = 'results'
-table.find('table')['width'] = '100%'
+#table = BeautifulSoup(mesh_tally.to_html(index=False),  'html5lib')
+#table.find('table')['id'] = 'results'
+#table.find('table')['width'] = '100%'
+
+with pd.option_context('display.max_colwidth', -1): 
+    table = mesh_tally.to_html(table_id='results', index=False)
 
 with open("output1.html", "w") as file:
     file.write(str(table))
+    
